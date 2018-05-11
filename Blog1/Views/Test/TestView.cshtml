@@ -1,0 +1,30 @@
+﻿@model Blog.Models.FormData
+
+@{
+    ViewBag.Title = "TestView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="form-post">
+    <h2>Анкета</h2>
+    @using (Html.BeginForm("Check", "Test", FormMethod.Get))
+    {
+        <p>Введите ваше имя:<br>@Html.TextBoxFor(x => x.Name, new { @class = "name" })</p>
+        <p>Ваш пол:</p>
+        @Html.RadioButtonFor(x => x.Gender, "male", new { @checked = "checked" })
+        <span>Мужской</span>
+        @Html.RadioButtonFor(x => x.Gender, "female")
+        <span>Женский</span>
+        <p>Какие языки вы знаете?</p>
+        <input id="English" type="checkbox" value="true" name="English" />
+        <input type="hidden" value="false" name="English" />
+        <label for="English">English</label>
+        @Html.CheckBoxFor(x => x.French)
+        <label for="French">French</label>
+        @Html.CheckBoxFor(x => x.Germany)
+        <label for="Germany">Germany</label>
+        <p>Опишите себя:</p>
+        <p>@Html.TextAreaFor(x => x.About,10,50,null)</p>
+        <input type="submit" class="btn" value="Отправить" />
+    }
+</div>
+

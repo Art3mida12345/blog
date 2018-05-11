@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title </title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css"/>
+</head>   
+<body>
+    <div class="content">
+        <header name="top">
+            <p>Blogger`s planet</p>
+        </header>
+        <div class="right-sidebar">
+            <nav>
+                <ul class="menu">
+                    <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Гостевая", "GuestIndex", "Guest")</li>
+                    <li>@Html.ActionLink("Анкета", "TestView", "Test")</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-body">
+            @RenderBody()
+        </div>
+    </div>
+    <footer>
+        <a href="#top">Вернуться в начало страницы</a>
+        <p>Blogger`s_planet.com &copy 2018 All Rights Reserved</p>
+    </footer>
+</body>
+</html>

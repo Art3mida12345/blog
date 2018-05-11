@@ -1,0 +1,14 @@
+﻿@{
+                ViewBag.Title = "Главная";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+@foreach (var a in ViewBag.Articles)
+{
+    <p class="main-page-date">@a.Time.ToShortDateString()</p>
+    <h1>@a.Title</h1>
+    <p>@a.Text</p>
+}

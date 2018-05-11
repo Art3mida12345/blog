@@ -1,0 +1,18 @@
+﻿@model Blog.Models.Feedback
+@{
+    ViewBag.Title = "Гостевая";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var f in ViewBag.Feedbacks)
+{
+    <p class="guest-page-date">@f.Date</p>
+    <h1>@f.Author</h1>
+    <p>@f.Text</p>
+}
+@using (Html.BeginForm("Post", "Guest", FormMethod.Post))
+{
+    <p>Ваше имя: @Html.TextBoxFor(x => x.Author)</p>
+    <p>@Html.TextAreaFor(x => x.Text)</p>
+    <input type="submit" value="Опубликовать" />
+}

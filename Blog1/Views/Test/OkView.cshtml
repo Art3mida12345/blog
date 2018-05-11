@@ -1,0 +1,54 @@
+﻿@using Blog.Models
+@using Blog.Helpers
+@{
+    ViewBag.Title = "OkView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="anketa">
+    @{
+        string[] hello = new string[]
+        {"Сегодня","Прекрасный","День)"};
+    }
+    @ListHelper.CreateList(Html, hello)
+    @using (Html.BeginForm("Check", "Test", FormMethod.Post))
+    {
+        <p>Вас зовут:</p>
+        <p>@(((FormData)Model).Name)</p>
+        <p>Ваш пол: </p>
+        if (((FormData)Model).Gender == "male")
+        {
+            <p>Мужской.</p>
+        }
+        else
+        {
+            <p>Женский.</p>
+        }
+        if (((FormData)Model).English)
+        {
+            <p>Вы знаете анлийский. </p>
+        }
+        else
+        {
+            <p>Вы не знаете английский. </p>
+        }
+        if (((FormData)Model).Germany)
+        {
+            <p>Вы знаете немецкий. </p>
+        }
+        else
+        {
+            <p>Вы не знаете немецкий. </p>
+        }
+        if (((FormData)Model).French)
+        {
+            <p>Вы знаете французский.</p>
+        }
+        else
+        {
+            <p>Вы не знаете французский.</p>
+        }
+        <p>Вы написали о себе:<br> @(((FormData)Model).About)</p>
+        <input type="submit" value="Ok" class="btn" />
+    }
+</div>
+
