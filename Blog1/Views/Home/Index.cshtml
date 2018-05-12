@@ -1,15 +1,27 @@
 ﻿@{
     ViewBag.Title = "Главная";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutForIndex.cshtml";
 }
 
-<!DOCTYPE html>
-
+@section Vote
+{
+    <div class="vote">
+    @using (Html.BeginForm("Vote", "Home", FormMethod.Get))
+    {
+        <p>Вам нравится сайт?</p>
+        @Html.RadioButton("vote","like", new {@checked="checked"})
+        <span>Да, очень)</span>
+        @Html.RadioButton("vote", "dontlike")
+        <span>Нет</span>
+        <input class="vote-btn" type="submit" value="Голосовать" />
+    }
+    </div>
+}
 
 @foreach (var a in ViewBag.Articles)
 {
     <p class="main-page-date">@a.Time.ToShortDateString()</p>
     <h1>@a.Title</h1>
-    <p>@a.Text.Replace("#","").Substring(0, 200)...</p>
-    <input class="preview" type="button" value="Подробнее" onclick="location.href='@Url.Action("GetArticle","Home", new {a.Id})'"/>
+    <p>@a.Text.Replace("#", "").Substring(0, 200)...</p>
+    <input class="preview" type="button" value="Подробнее" onclick="location.href='@Url.Action("GetArticle","Home", new {a.Id})'" />
 }

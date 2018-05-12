@@ -152,6 +152,20 @@ header a {
     font-style: italic;
 }
 
+.vote {
+    display: block;
+    color: aqua;
+}
+
+.vote-btn {
+    display: block;
+    height: 30px;
+    background-color: #1e9c79;
+    color: #1f2120;
+    font-family: Monotype Coursiva;
+    font-style: italic;
+}
+
 @media only screen and (max-width: 600px) {
     header a { font-size: 2rem; }
 

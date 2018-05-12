@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using Blog.Models;
 using Blog1.Models;
 using DAL.Repositories;
 
@@ -7,6 +8,7 @@ namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
+        static Voting _vote=new Voting();
         /// <summary>
         /// <c>Index</c> is a method in the <c>HomeController</c>.
         /// It post articles on the page from DB.
@@ -38,6 +40,13 @@ namespace Blog.Controllers
 
             ViewBag.Article = articleViewModel;
             return View();
+        }
+
+        public ViewResult Vote(string vote)
+        {
+            if (vote == "like") _vote.Like++;
+            else _vote.DontLike++;
+            return View(_vote);
         }
     }
 }

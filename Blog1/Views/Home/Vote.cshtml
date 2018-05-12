@@ -1,0 +1,9 @@
+﻿@model Blog.Models.Voting
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>За прогослосовало:@Model.Like человек.</p>
+<p>Против проголосовало:@Model.DontLike человек.</p>

@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using DAL.Entities;
 
 namespace Blog
 {
@@ -12,7 +14,7 @@ namespace Blog
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-           // Database.SetInitializer<BlogContext>(new DropCreateDatabaseIfModelChanges<BlogContext>());
+            //Database.SetInitializer<BlogContext>(new MyContextInitializer());
         }
     }
 }

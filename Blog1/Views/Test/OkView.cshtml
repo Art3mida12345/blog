@@ -6,10 +6,10 @@
 }
 <div class="anketa">
     @{
-        string[] hello = new string[]
-        {"Сегодня","Прекрасный","День)"};
+        string[] hello = {"Сегодня","Прекрасный","День)"};
     }
-    @ListHelper.CreateList(Html, hello)
+
+    @Html.CreateList(hello)
     @using (Html.BeginForm("Check", "Test", FormMethod.Post))
     {
         <p>Вас зовут:</p>
