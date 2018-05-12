@@ -166,6 +166,11 @@ header a {
     font-style: italic;
 }
 
+.field-validation-error {
+    color: cornsilk;
+    display: block;
+}
+
 @media only screen and (max-width: 600px) {
     header a { font-size: 2rem; }
 

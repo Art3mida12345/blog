@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Blog.Models;
 using Blog1.Models;
@@ -8,7 +9,7 @@ namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
-        static Voting _vote=new Voting();
+        private static readonly Voting Voting=new Voting();
         /// <summary>
         /// <c>Index</c> is a method in the <c>HomeController</c>.
         /// It post articles on the page from DB.
@@ -44,9 +45,18 @@ namespace Blog.Controllers
 
         public ViewResult Vote(string vote)
         {
-            if (vote == "like") _vote.Like++;
-            else _vote.DontLike++;
-            return View(_vote);
+            if (vote == "like") Voting.Like++;
+            else Voting.DontLike++;
+            return View(Voting);
+        }
+
+        public ViewResult GetArticles(string h)
+        {
+            ArticleR articleR = new ArticleR();
+            var temp = articleR.GetAll();
+            var art = temp.Where(a => a.Text.Contains(h));
+            ViewBag.Articles = art;
+            return View("Index");
         }
     }
 }

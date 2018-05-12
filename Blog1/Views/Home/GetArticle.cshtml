@@ -10,6 +10,6 @@
     var temp = ViewBag.Article.HashTags.Split(',');
     foreach (var h in temp)
     {
-        <a class="hash-tags" href="@Url.Action("GetArticle","Home", new {h})">@h</a>
+        <a class="hash-tags" href="@Url.Action("GetArticles","Home", new {h})">@h</a>
     }
 }

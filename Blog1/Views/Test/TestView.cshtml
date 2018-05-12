@@ -8,7 +8,8 @@
     <h2>Анкета</h2>
     @using (Html.BeginForm("Check", "Test", FormMethod.Get))
     {
-        <p>Введите ваше имя:<br>@Html.TextBoxFor(x => x.Name, new { @class = "name" })</p>
+        <p>Введите ваше имя:<br>@Html.TextBoxFor(x => x.Name, new {@class = "name"})</p>
+        @Html.ValidationMessageFor(x => x.Name)
         <p>Ваш пол:</p>
         @Html.RadioButtonFor(x => x.Gender, "male", new { @checked = "checked" })
         <span>Мужской</span>
@@ -24,6 +25,7 @@
         <label for="Germany">Germany</label>
         <p>Опишите себя:</p>
         <p>@Html.TextAreaFor(x => x.About,10,50,null)</p>
+        @Html.ValidationMessageFor(x => x.About)
         <input type="submit" class="btn" value="Отправить" />
     }
 </div>

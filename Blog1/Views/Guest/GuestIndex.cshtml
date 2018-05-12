@@ -13,6 +13,8 @@
 @using (Html.BeginForm("Post", "Guest", FormMethod.Post))
 {
     <p>Ваше имя: @Html.TextBoxFor(x => x.Author)</p>
+    @Html.ValidationMessageFor(x => x.Author)
     <p>@Html.TextAreaFor(x => x.Text)</p>
+    @Html.ValidationMessageFor(x => x.Text)
     <input type="submit" value="Опубликовать" />
 }
