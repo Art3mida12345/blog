@@ -156,6 +156,7 @@
     </Compile>
     <Compile Include="Helpers\ListHelper.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\FormData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,6 +198,7 @@
     <Content Include="Views\Guest\GuestIndex.cshtml" />
     <Content Include="Views\Test\TestView.cshtml" />
     <Content Include="Views\Test\OkView.cshtml" />
+    <Content Include="Views\Home\GetArticle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

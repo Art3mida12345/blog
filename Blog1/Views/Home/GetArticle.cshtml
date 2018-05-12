@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Статья";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p class="main-page-date">@ViewBag.Article.Time.ToShortDateString()</p>
+<h1>@ViewBag.Article.Title</h1>
+<p>@ViewBag.Article.Text.Replace("#", "")</p>
+@{
+    var temp = ViewBag.Article.HashTags.Split(',');
+    foreach (var h in temp)
+    {
+        <a class="hash-tags" href="@Url.Action("GetArticle","Home", new {h})">@h</a>
+    }
+}

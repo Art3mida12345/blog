@@ -20,5 +20,19 @@ namespace DAL.Repositories
             db.SaveChanges();
             db.Dispose();
         }
+
+        public ArticleD Find(int id)
+        {
+            BlogContext db = new BlogContext();
+            return db.Articles.Find(id);
+        }
+
+        public void Update(int id, ArticleD articleD)
+        {
+            BlogContext db = new BlogContext();
+            ArticleD article = db.Articles.Find(id);
+            article.Text = articleD.Text;
+            db.SaveChanges();
+        }
     }
 }

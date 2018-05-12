@@ -1,6 +1,6 @@
 ﻿@{
-                ViewBag.Title = "Главная";
-                Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -10,5 +10,6 @@
 {
     <p class="main-page-date">@a.Time.ToShortDateString()</p>
     <h1>@a.Title</h1>
-    <p>@a.Text</p>
+    <p>@a.Text.Replace("#","").Substring(0, 200)...</p>
+    <input class="preview" type="button" value="Подробнее" onclick="location.href='@Url.Action("GetArticle","Home", new {a.Id})'"/>
 }

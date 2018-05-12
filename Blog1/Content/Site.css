@@ -22,15 +22,6 @@ header {
     margin: 0;
 }
 
-header p {
-    font-family: 'Monotype Corsiva';
-    position: absolute;
-    left: 110px;
-    top: 11px;
-    color: #1e9c79;
-    font-size: 60px;
-}
-
 .main-body {
     width: 80%;
     color: #00e0a1;
@@ -137,8 +128,32 @@ footer {
 
 .anketa { font-size: 1.7em; }
 
+.hash-tags {
+    color: darkseagreen;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+header a {
+    font-family: 'Monotype Corsiva';
+    position: absolute;
+    left: 110px;
+    top: 11px;
+    color: #1e9c79;
+    font-size: 60px;
+    text-decoration: none;
+}
+
+.preview {
+    height: 30px;
+    background-color: #1e9c79;
+    color: #1f2120;
+    font-family: Monotype Coursiva;
+    font-style: italic;
+}
+
 @media only screen and (max-width: 600px) {
-    header p { font-size: 2rem; }
+    header a { font-size: 2rem; }
 
     .right-sidebar a { font-size: 0.8em; }
 
